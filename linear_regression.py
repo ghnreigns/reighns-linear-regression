@@ -1,21 +1,12 @@
 import collections
-import functools
+import utils
 
 import numpy as np
-from sklearn.exceptions import NotFittedError
+import loss_functions
 
 
-def NotFitted(func):
-    @functools.wraps(func)
-    def wrapper(self, *args, **kwargs):
-        if not self._fitted:
-            # print(self._fitted)
-            raise NotFittedError  # or you can define custom error NotFittedError()
-        else:
-            # print(self._fitted)
-            return func(self, *args, **kwargs)
 
-    return wrapper
+
 
 
 def MSE(y_true: np.ndarray, y_pred: np.ndarray):
@@ -172,7 +163,7 @@ class MyLinearRegression:
             self.optimal_betas = self._init_weights(X)
             for epoch in range(self.num_epochs):
                 y_pred = X @ self.optimal_betas
-                MSE_LOSS = MSE(y_true, y_pred)
+                MSE_LOSS = loss_functions.l2_loss(y_true, y_pred)
                 GRADIENT_VECTOR = (2 / n_samples) * -(y_true - y_pred) @ X
                 # yet another vectorized operation
                 self.optimal_betas -= self.learning_rate * GRADIENT_VECTOR
@@ -186,7 +177,7 @@ class MyLinearRegression:
 
         return self
 
-    @NotFitted
+    @utils.NotFitted
     def predict(self, X: np.ndarray):
         """
         Predicts the y_true value given an input of X.
@@ -215,7 +206,7 @@ class MyLinearRegression:
 
         return y_pred
 
-    @NotFitted
+    @utils.NotFitted
     def residuals(self, X: np.ndarray, y_true: np.ndarray):
         self._residuals = y_true - self.predict(X)
 
