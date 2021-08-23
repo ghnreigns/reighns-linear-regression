@@ -151,7 +151,7 @@ class MyLinearRegression:
 
         elif self.solver == "Batch Gradient Descent":
             assert self.num_epochs is not None
-            
+
             self.optimal_betas = self._init_weights(X)
             for epoch in range(self.num_epochs):
                 y_pred = X @ self.optimal_betas
@@ -201,5 +201,3 @@ class MyLinearRegression:
     @utils.NotFitted
     def residuals(self, X: np.ndarray, y_true: np.ndarray):
         self._residuals = y_true - self.predict(X)
-
-
