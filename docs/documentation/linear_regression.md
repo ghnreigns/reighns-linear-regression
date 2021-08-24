@@ -86,13 +86,15 @@ But this means that each yi has in principle a different expected value : so the
 
 So given a prediction vector y hat, this set of y hat (note not just single prediction) gives rise to the lowest L2 Loss, note again, this "unique" set of y hat will give rise to the lowest L2 loss. Now, this set of y hat is also the conditional mean of y given the training set X, technically, say our yhat[0] = 2.3, then this means, the corresponding X[0], say 1.5 (only 1 feature), is corresponding to this point 2.3, and this means on average, points residing with the input x = 1.5, will give an expectation value of 2.3. Now, if we go to yhat[1] = 3.3, with X[1] = 1.8, then the same logic applies.
 
+For more intuition, refer to the `lecture/conditional_mean`, note this is an often overlooked information and one should not neglect it.
+
 ---
 
 ## Function to predict y
 
 An simple formula that predicts the value of the house ($\hat{y}$) given input variable square feet ($x$) is as follows:
 
-$$⁍$$
+$$\hat{y} = \beta_0 + \beta_1 x$$
 
 There are no more error terms $\epsilon$ and rightfully so, because if our model can know the unknown errors, it will be a perfect model, however, in reality, this SLR is just an estimation of $y$.
 
@@ -100,7 +102,7 @@ There are no more error terms $\epsilon$ and rightfully so, because if our model
 
 The definition of residuals is easy, it is simply the difference between the predicted $y$ value and the actual $y$ value. For more rigorous understanding, see the notes I made for myself. 
 
-$$⁍$$
+$$\text{Residuals}_{i} = y_i - \hat{y}_i ~ \forall i$$
 
 ## Function of Residual Sum of Squared Error and OLS
 
@@ -143,7 +145,7 @@ We end this section off with a note that this method is called the Ordinary Leas
 
 Since we have the formula to calculate $\beta_0, \beta_1$, we can use `python` to do the dirty work for us. For the full code, please refer to **appendix**. 
 
-$$⁍$$
+$$\hat{y} = 71+0.135x$$
 
 Hereby attached is also a nice plot visualization. Some explanation is as follows: The graph below is 3 graphs stacked together - the blue dots represent $(x_i, y_i)$ where it represents a scatter plot of the original values of x and its ground truth y, one can observe that the scatter plot of the original dataset vaguely describes a linear relationship; the red dots represent $(x_i, \hat{y}_i)$ represents a scatter plot of the x and the predicted values $\hat{y}$; last but not least, we draw the best fit line across.
 
