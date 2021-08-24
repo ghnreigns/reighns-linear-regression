@@ -14,3 +14,5 @@ rich==10.7.0
 pretty-errors==1.2.23
 typer==0.3.2
 scikit-learn==0.24.2
+click==7.1.2
+MarkupSafe==1.1

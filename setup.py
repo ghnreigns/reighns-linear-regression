@@ -29,7 +29,7 @@ docs_packages = [
     "mkdocs==1.1.2",
     "mkdocs-macros-plugin==0.5.0",
     "mkdocs-material==6.2.4",
-    "mkdocstrings==0.14.0",
+    "mkdocstrings==0.15.2",
 ]
 
 setup(
