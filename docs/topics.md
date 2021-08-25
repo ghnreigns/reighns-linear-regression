@@ -1,1 +1,3 @@
+- Conditional Expectation of Y given X
+  - The OLS estimates the Conditional Expectation of Y given X. 
 - Assumptions of Linear Regression

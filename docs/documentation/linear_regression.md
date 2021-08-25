@@ -26,7 +26,7 @@
   - [**Orthogonalization**](#orthogonalization)
   - [**Regularization**](#regularization)
   - [**Statistical and Interpretation of Linear Regression**](#statistical-and-interpretation-of-linear-regression)
-- [Python Implementation](#python-implementation)
+  - [Python Implementation](#python-implementation)
   - [References and Citations](#references-and-citations)
 
 Our dataset is fairly simple, here is a brief overview of the first five rows of it.
@@ -525,7 +525,7 @@ Conclusion on what I learnt in this few days:
 
 ---
 
-# Python Implementation
+## Python Implementation
 
 - One Hundred Page ML Book, CS229, ML Glossary, GeeksforGeeks.
 - Take input $X$ and $y$ → Use either closed form solution or Gradient Descent. And remember $y = X\beta$, use this everywhere for vectorization.
